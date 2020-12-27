@@ -70,6 +70,8 @@ module.exports = ({ debug = false } = {}) => {
   devices.map((deviceInfo) => {
     const device = new HID.HID(deviceInfo.path)
 
+    emitter.on('close', () => device.close())
+
     device.on('error', (err) => emitter.emit('error', err))
     device.on('data', (data) => {
       if (debug) {
