@@ -26,7 +26,7 @@ module.exports = ({ debug = false } = {}) => {
 
   function bootstrap() {
     if (!interval) {
-      interval = setInterval(bootstrap, 1 * 1000 * 60) // every 5m
+      interval = setInterval(bootstrap, 5 * 1000 * 60) // every 5m
     }
 
     if (!bootstrapDevice) {
