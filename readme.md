@@ -21,7 +21,7 @@ $ npm install srn/hyperx-cloud-flight-wireless
 ## Usage
 
 ```js
-const hyperxCloudFlight = require('hyperx-cloud-flight')()
+const hyperxCloudFlight = require('hyperx-cloud-flight-wireless')()
 
 hyperxCloudFlight.on('power', state) // 'on' | 'off'
 hyperxCloudFlight.on('muted', muted) // Boolean
