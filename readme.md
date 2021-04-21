@@ -37,7 +37,13 @@ The battery percentage is only an estimate based on the "status" report.
 
 ## Linux support
 
-To work with linux it is necessary to run as root, or define rules for udev, see more at: https://unix.stackexchange.com/questions/85379/dev-hidraw-read-permissions/85459
+To work with linux it is necessary to run as root, or define rules for udev.
+
+```
+echo 'KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0664", GROUP="plugdev"' | sudo tee -a /etc/udev/rules.d/99-hidraw-permissions.rules && sudo udevadm control --reload-rules
+```
+
+disconnect and reconnect the device
 
 ## License
 
