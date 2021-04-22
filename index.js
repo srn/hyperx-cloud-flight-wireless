@@ -10,7 +10,11 @@ const PRODUCT_ID = 5828
 // 65363 - "status" - byte length: 20
 
 module.exports = ({ debug = false } = {}) => {
-  HID.setDriverType('libusb')
+  const platform = process.platform
+  if (platform == "win32" || platform == "win64") {
+    HID.setDriverType('libusb')
+  }
+  
   const emitter = new Emittery()
 
   const devices = HID.devices().filter(
