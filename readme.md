@@ -2,7 +2,7 @@
 
 > Module for interfacing with [HyperX Cloud Flight Wireless](https://www.hyperxgaming.com/unitedstates/us/headsets/cloud-flight-wireless-gaming-headset)
 
-Supports Windows 10 x64.
+Supports Windows 10 x64 and Linux following the [instructions](https://github.com/srn/hyperx-cloud-flight-wireless#linux-support).
 
 Current functionality:
 
