@@ -9,7 +9,7 @@ const PRODUCT_ID = 5828
 // 12 - volume up/down - byte length: 5
 // 65363 - "status" - byte length: 20
 
-module.exports = ({ debug = false } = {}) => {
+module.exports = ({ debug = false, updateDelay = 5*1000*60 } = {}) => {
   const platform = process.platform
   if (platform == "win32" || platform == "win64") {
     HID.setDriverType('libusb')
@@ -30,7 +30,7 @@ module.exports = ({ debug = false } = {}) => {
 
   function bootstrap() {
     if (!interval) {
-      interval = setInterval(bootstrap, 5 * 1000 * 60) // every 5m
+      interval = setInterval(bootstrap, updateDelay)
     }
 
     if (!bootstrapDevice) {
