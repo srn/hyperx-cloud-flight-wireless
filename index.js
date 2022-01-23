@@ -90,6 +90,7 @@ module.exports = ({ debug = false, updateDelay = 5*1000*60 } = {}) => {
         case 0x2:
           if (data[0] === 0x64 && data[1] == 0x3) {
             clearInterval(interval)
+            interval = null;
 
             return emitter.emit('power', 'off')
           }
